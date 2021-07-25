@@ -1,4 +1,4 @@
-package com.rsh.tkachenkoni.calcsciencelib
+package com.rsh.tkachenkoni.calcsciencelib.service
 
 import android.util.Log
 import java.util.*
@@ -108,7 +108,7 @@ class MathCalculation {
         while (j < input.size) {
             ch = input[j] //чтение символа
             if (MathParser.checkNumber(ch)) {
-                theStack!!.push(ch)
+                theStack!!.push(ch!!)
             } else {
                 when (ch) {
                     "-" -> {

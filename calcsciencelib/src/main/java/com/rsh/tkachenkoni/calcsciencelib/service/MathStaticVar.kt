@@ -1,4 +1,4 @@
-package com.rsh.tkachenkoni.calcsciencelib
+package com.rsh.tkachenkoni.calcsciencelib.service
 
 class MathStaticVar {
     var brakets_open = 0

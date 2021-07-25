@@ -1,0 +1,3 @@
+rootProject.name = "CalcScienceLibrary"
+include ':app'
+include ':calcsciencelib'

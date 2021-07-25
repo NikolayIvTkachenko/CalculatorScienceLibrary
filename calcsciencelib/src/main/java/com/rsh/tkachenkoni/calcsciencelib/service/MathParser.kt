@@ -1,4 +1,4 @@
-package com.rsh.tkachenkoni.calcsciencelib
+package com.rsh.tkachenkoni.calcsciencelib.service
 
 import android.util.Log
 import java.util.*
@@ -7,8 +7,8 @@ object MathParser {
     var degree_count = 0
     var operand1 = 0.0
     var multudevide = 0
-    fun ParserMathExpression(expessionMath: String): ArrayList<String> {
-        val expressions = ArrayList<String>()
+    fun ParserMathExpression(expessionMath: String): ArrayList<String?> {
+        val expressions = ArrayList<String?>()
         var str_serv = ""
         var expressionMathSub = ""
         var key_number = false
@@ -198,7 +198,7 @@ object MathParser {
 
     fun viewList(listexpression: ArrayList<String?>) {
         for (i in listexpression.indices) {
-            Log.d(" list #$i = ", listexpression[i]!!)
+            //Log.d(" list #$i = ", listexpression[i]!!)
         }
     }
 

@@ -1,9 +1,9 @@
-package com.rsh.tkachenkoni.calcsciencelib
+package com.rsh.tkachenkoni.calcsciencelib.service
 
 import java.util.*
 
 class InToPost(  //private String input;
-    private val input: ArrayList<String>
+    private val input: ArrayList<String?>
 ) {
     private val theStack: StackX
     private val theStackServ: StackX
@@ -28,7 +28,7 @@ class InToPost(  //private String input;
             }
         }
         while (!theStack.isEmpty()) { //извлечение оставшихся операторов
-            outputList.add(theStack.pop())
+            outputList.add(theStack.pop()!!)
         }
         return outputList
     }
@@ -44,14 +44,14 @@ class InToPost(  //private String input;
                 precy =
                     if (opTop === "+" || opTop === "-") 1 else if (opTop === "*" || opTop === "/" || opTop === "^") 2 else 3
                 if (precy < precx) {
-                    theStack.push(opTop)
+                    theStack.push(opTop!!)
                     break
                 } else {
                     outputList.add(opTop)
                 }
             }
         }
-        theStack.push(opThis)
+        theStack.push(opThis!!)
     }
 
     fun gotParenList(ch: String?) {
@@ -100,12 +100,12 @@ class InToPost(  //private String input;
                 var prec2 = 0
                 if (opTop === "+" || opTop === "-") precl = 1 else prec2 = 2
                 output = if (prec2 < precl) {
-                    theStack.push(opTop)
+                    theStack.push(opTop!!)
                     break
                 } else output + opTop
             }
         }
-        theStack.push(opThis)
+        theStack.push(opThis!!)
     }
 
     fun gotParen(ch: String?) {

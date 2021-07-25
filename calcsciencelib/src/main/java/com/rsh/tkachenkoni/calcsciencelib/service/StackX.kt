@@ -1,11 +1,11 @@
-package com.rsh.tkachenkoni.calcsciencelib
+package com.rsh.tkachenkoni.calcsciencelib.service
 
 import android.util.Log
 
-class StackX(private val maxSize: Int) {
-    private val stackArray: Array<String?>
+class StackX(val maxSize: Int) {
+    private var stackArray: Array<String?> = arrayOfNulls(maxSize)
     private var top: Int
-    fun push(j: String?) {
+    fun push(j: String) {
         stackArray[++top] = j
     }
 
@@ -21,7 +21,6 @@ class StackX(private val maxSize: Int) {
         return top == -1
     }
 
-
     fun size(): Int {
         return top + 1
     }
@@ -32,7 +31,7 @@ class StackX(private val maxSize: Int) {
 
     fun displayStack() {
         for (j in 0 until size()) {
-            Log.d("stack: ", peekN(j)!!)
+            //Log.d("stack: ", peekN(j)!!)
         }
     }
 
